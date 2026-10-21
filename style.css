@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #ffe0ec, #f8bbd0, #e9d5ff);
+}
+
+.hearts {
+    position: fixed;
+    top: 8%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(20px, 5vw, 35px);
+    opacity: 0.7;
+    animation: float 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    padding: 35px 22px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid white;
+    border-radius: 28px;
+    box-shadow: 0 18px 45px rgba(180, 60, 110, 0.2);
+}
+
+.emoji {
+    font-size: 55px;
+    animation: float 2s ease-in-out infinite;
+}
+
+h1 {
+    color: #c02670;
+    font-size: clamp(25px, 6vw, 32px);
+    margin: 15px 0 10px;
+}
+
+p {
+    color: #854267;
+    line-height: 1.6;
+}
+
+h2 {
+    color: #9d174d;
+    font-size: clamp(21px, 5vw, 25px);
+    margin: 25px 0;
+}
+
+.buttons {
+    position: relative;
+    width: 100%;
+    height: 115px;
+}
+
+.buttons button {
+    position: absolute;
+    min-width: 115px;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: transform 0.2s, background 0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#yesBtn {
+    top: 10px;
+    left: 8%;
+    color: white;
+    background: #e74783;
+    box-shadow: 0 5px 12px #e7478340;
+}
+
+#yesBtn:hover {
+    background: #c02670;
+    transform: scale(1.06);
+}
+
+#noBtn {
+    top: 10px;
+    right: 8%;
+    color: #9d174d;
+    background: #ffe4ef;
+}
+
+.footer {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 380px) {
+    .card {
+        padding: 28px 15px;
+    }
+
+    .buttons button {
+        min-width: 100px;
+        padding: 12px 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
