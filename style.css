@@ -64,21 +64,21 @@ h2 {
 .buttons {
     position: relative;
     width: 100%;
-    height: 115px;
+    max-width: 330px;
+    height: 130px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .buttons button {
     position: absolute;
-    min-width: 115px;
-    padding: 14px 22px;
-    border: none;
-    border-radius: 14px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
+    z-index: 2;
     touch-action: manipulation;
-    transition: transform 0.2s, background 0.2s;
     -webkit-tap-highlight-color: transparent;
+}
+
+.buttons[hidden] {
+    display: none !important;
 }
 
 #yesBtn {
